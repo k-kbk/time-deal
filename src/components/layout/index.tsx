@@ -7,10 +7,10 @@ interface LayoutProps {
 
 export default function Index({ children }: LayoutProps) {
   return (
-    <div className="bg-gray-100">
+    <>
       <Header />
       {children}
       <TabBar />
-    </div>
+    </>
   );
 }
