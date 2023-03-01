@@ -12,6 +12,8 @@ module.exports = {
         128: '32rem',
       },
       colors: {
+        background: '#ebebeb',
+        header: '#0d0d0d',
       },
     },
   },
