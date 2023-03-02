@@ -1,7 +1,21 @@
+import { NavLink } from 'react-router-dom';
+
 export default function Header() {
   return (
-    <header className="flex h-[4rem] items-center justify-start bg-header">
-      <p className="px-8 text-2xl font-bold text-red-500">NUMBLE.</p>
+    <header className="fixed top-0 flex h-[4rem] w-full items-center justify-between bg-header px-8 sm:px-10">
+      <p className="text-2xl font-bold tracking-tighter text-red-500">
+        NUMBLE.
+      </p>
+      <NavLink
+        to="/login"
+        className={({ isActive }) =>
+          isActive
+            ? 'hidden'
+            : 'block' + ' py-2 px-4 text-lg font-semibold text-white'
+        }
+      >
+        로그인
+      </NavLink>
     </header>
   );
 }

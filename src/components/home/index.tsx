@@ -55,7 +55,7 @@ const dummy = [
 
 export default function Index() {
   return (
-    <div>
+    <div className="mt-[4rem]">
       <Banner />
       <Container>
         {dummy.map((item) => (
