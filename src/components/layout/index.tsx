@@ -10,7 +10,7 @@ export default function Index({ children }: LayoutProps) {
     <>
       <Header />
       {children}
-      <TabBar />
+      {/* <TabBar /> */}
     </>
   );
 }
