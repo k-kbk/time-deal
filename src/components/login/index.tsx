@@ -15,7 +15,7 @@ export default function Index() {
   return (
     <>
       <div className="flex h-screen w-screen flex-col items-center justify-center">
-        <div className="w-[25rem]">
+        <div className="w-[80%] sm:w-[25rem]">
           <h1 className="my-12 text-left text-4xl font-bold tracking-tighter">
             NUMBLE.
           </h1>
