@@ -17,7 +17,7 @@ export default function Product({
   const discountedPrice = ((100 - discount) * price) / 100;
 
   return (
-    <div className="my-0.5 flex h-[8rem] w-full items-center justify-center bg-white px-1 font-medium sm:my-1 sm:h-[10rem] sm:w-[45rem]">
+    <div className="my-0.5 flex h-[8rem] w-full items-center justify-center rounded-lg bg-white px-1 font-medium sm:my-1 sm:h-[10rem] sm:w-[45rem]">
       <div className="mr-2 flex w-[33%] justify-center sm:w-[30%]">
         <img src={img} alt="img" className="h-[7.5rem] sm:h-[10rem]" />
       </div>

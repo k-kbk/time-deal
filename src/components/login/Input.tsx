@@ -3,6 +3,7 @@ interface InputProps {
   name: string;
   label: string;
   value: string;
+  inputStyle?: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
@@ -11,6 +12,7 @@ export default function Input({
   name,
   label,
   value,
+  inputStyle,
   setValue,
 }: InputProps) {
   function handleInput(event: React.ChangeEvent<HTMLInputElement>) {
@@ -18,7 +20,7 @@ export default function Input({
   }
 
   return (
-    <div className="mb-4 flex flex-col text-lg tracking-tight">
+    <div className="mb-4 flex flex-col text-lg">
       <label htmlFor={name} className="mb-1 font-medium">
         {label}
       </label>
@@ -28,8 +30,9 @@ export default function Input({
         id={name}
         value={value}
         onChange={handleInput}
-        className="rounded-lg px-4 py-2 outline-none"
+        className={`rounded-lg px-4 py-2 outline-none ${inputStyle}`}
         spellCheck={false}
+        autoComplete="off"
       />
     </div>
   );
