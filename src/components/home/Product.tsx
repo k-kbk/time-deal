@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface ProductProps {
   id?: number;
   img: string;
@@ -8,16 +10,29 @@ interface ProductProps {
 }
 
 export default function Product({
+  id,
   img,
   name,
   price,
   discount,
   remaining,
 }: ProductProps) {
+  /** 할인 적용 가격 */
   const discountedPrice = ((100 - discount) * price) / 100;
 
   return (
-    <div className="my-0.5 flex h-[8rem] w-full items-center justify-center rounded-lg bg-white px-1 font-medium sm:my-1 sm:h-[10rem] sm:w-[45rem]">
+    <Link
+      to={`/product/${id}`}
+      state={{
+        id,
+        img,
+        name,
+        price,
+        discount,
+        remaining,
+      }}
+      className="my-0.5 flex h-[8rem] w-full items-center justify-center rounded-lg bg-white px-1 font-medium hover:opacity-50 sm:my-1 sm:h-[10rem] sm:w-[45rem]"
+    >
       <div className="mr-2 flex w-[33%] justify-center sm:w-[30%]">
         <img src={img} alt="img" className="h-[7.5rem] sm:h-[10rem]" />
       </div>
@@ -37,12 +52,12 @@ export default function Product({
             {price.toLocaleString()}
           </div>
           <div>
-            <span className="mr-3 text-blue-700 sm:text-xl">{`${discount.toLocaleString()}%`}</span>
+            <span className="mr-2 text-blue-700 sm:text-xl">{`${discount.toLocaleString()}%`}</span>
             <span className="text-lg sm:text-2xl">{`${discountedPrice.toLocaleString()}`}</span>
-            <span className="text-sm sm:text-lg">원</span>
+            <span className="text-sm sm:text-xl">원</span>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

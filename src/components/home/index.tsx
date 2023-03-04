@@ -55,12 +55,13 @@ const dummy = [
 
 export default function Index() {
   return (
-    <div className="mt-[4rem]">
+    <div className="mt-[4rem] bg-neutral-50">
       <Banner />
       <Container>
         {dummy.map((item) => (
           <Product
             key={item.id}
+            id={item.id}
             img={item.img}
             name={item.name}
             price={item.price}
