@@ -43,7 +43,7 @@ export default function SignUpModal({ setRenderModal }: SignUpModalProps) {
             setValue={setInputCheckedPw}
             inputStyle="border"
           />
-          <button className="mt-16 mb-2 rounded-lg bg-red-500 py-3 font-semibold text-white shadow hover:bg-opacity-70 sm:py-4 sm:text-xl">
+          <button className="mt-16 mb-2 rounded-lg bg-red-500 py-4 text-lg font-semibold text-white shadow hover:bg-opacity-70 sm:text-xl">
             회원가입
           </button>
         </form>

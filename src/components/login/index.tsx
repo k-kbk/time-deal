@@ -34,7 +34,7 @@ export default function Index() {
               value={inputPw}
               setValue={setInputPw}
             />
-            <button className="mt-12 mb-2 rounded-lg bg-red-500 py-4 font-semibold text-white shadow hover:bg-opacity-70 sm:text-xl">
+            <button className="mt-12 mb-2 rounded-lg bg-red-500 py-4 text-lg font-semibold text-white shadow hover:bg-opacity-70 sm:text-xl">
               로그인
             </button>
           </form>
