@@ -12,10 +12,6 @@ body {
   letter-spacing: -0.025em;
 }
 
-body,
-#root {
-  background-color: rgb(243, 244, 246);
-}
 #modal-root {
   position: fixed;
   z-index: 100;

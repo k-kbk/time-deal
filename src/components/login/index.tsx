@@ -14,9 +14,9 @@ export default function Index() {
 
   return (
     <>
-      <div className="flex h-screen w-screen flex-col items-center justify-center">
+      <div className="flex h-screen w-screen flex-col items-center justify-center bg-neutral-50 sm:text-lg">
         <div className="w-[80%] sm:w-[25rem]">
-          <h1 className="my-12 text-left text-4xl font-bold tracking-tighter">
+          <h1 className="my-12 text-left text-4xl font-bold tracking-tighter sm:text-5xl">
             NUMBLE.
           </h1>
           <form className="flex flex-col justify-start drop-shadow-sm">
@@ -34,12 +34,12 @@ export default function Index() {
               value={inputPw}
               setValue={setInputPw}
             />
-            <button className="mt-12 mb-4 rounded-lg bg-red-500 py-4 text-lg font-semibold text-white hover:bg-opacity-70">
+            <button className="mt-12 mb-2 rounded-lg bg-red-500 py-4 font-semibold text-white shadow hover:bg-opacity-70 sm:text-xl">
               로그인
             </button>
           </form>
           <button
-            className="w-full py-2 font-medium hover:text-neutral-400"
+            className="w-full py-5 font-medium hover:text-neutral-400"
             onClick={handleModal}
           >
             회원가입하기

@@ -20,7 +20,7 @@ export default function Input({
   }
 
   return (
-    <div className="mb-4 flex flex-col text-lg">
+    <div className="mb-4 flex flex-col">
       <label htmlFor={name} className="mb-1 font-medium">
         {label}
       </label>

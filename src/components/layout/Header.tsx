@@ -14,7 +14,8 @@ export default function Header() {
         className={({ isActive }) =>
           isActive
             ? 'hidden'
-            : 'block' + ' py-2 px-4 text-lg font-semibold text-white'
+            : 'block' +
+              ' py-2 px-4 text-lg font-semibold text-white hover:text-neutral-400'
         }
       >
         로그인
