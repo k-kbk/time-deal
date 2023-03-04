@@ -30,7 +30,7 @@ export default function Input({
         id={name}
         value={value}
         onChange={handleInput}
-        className={`rounded-lg px-4 py-2 outline-none ${inputStyle}`}
+        className={`rounded-lg border px-4 py-2 outline-none ${inputStyle}`}
         spellCheck={false}
         autoComplete="off"
       />

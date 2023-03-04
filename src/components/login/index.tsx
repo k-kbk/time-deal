@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Input from './Input';
 import ModalPortal from './ModalPortal';
 import SignUpModal from './SignUpModal';
@@ -7,6 +7,15 @@ export default function Index() {
   const [inputId, setInputId] = useState('');
   const [inputPw, setInputPw] = useState('');
   const [renderModal, setRenderModal] = useState(false);
+  const [isEntered, setIsEntered] = useState(false);
+
+  useEffect(() => {
+    if (inputId && inputPw) {
+      setIsEntered(true);
+    } else {
+      setIsEntered(false);
+    }
+  }, [inputId, inputPw]);
 
   function handleModal() {
     setRenderModal(true);
@@ -19,7 +28,7 @@ export default function Index() {
           <h1 className="my-12 text-left text-4xl font-bold tracking-tighter sm:text-5xl">
             NUMBLE.
           </h1>
-          <form className="flex flex-col justify-start drop-shadow-sm">
+          <form className="flex flex-col justify-start">
             <Input
               type="text"
               name="id"
@@ -34,7 +43,10 @@ export default function Index() {
               value={inputPw}
               setValue={setInputPw}
             />
-            <button className="mt-12 mb-2 rounded-lg bg-red-500 py-4 text-lg font-semibold text-white shadow hover:bg-opacity-70 sm:text-xl">
+            <button
+              className={`mt-12 mb-2 rounded-lg bg-red-500 py-4  text-lg font-semibold text-white shadow hover:bg-opacity-70  sm:text-xl`}
+              disabled={!isEntered}
+            >
               로그인
             </button>
           </form>

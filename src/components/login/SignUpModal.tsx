@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Input from './Input';
 
 interface SignUpModalProps {
@@ -9,6 +9,24 @@ export default function SignUpModal({ setRenderModal }: SignUpModalProps) {
   const [inputId, setInputId] = useState('');
   const [inputPw, setInputPw] = useState('');
   const [inputCheckedPw, setInputCheckedPw] = useState('');
+  const [isEntered, setIsEntered] = useState(false);
+  const [isPwChecked, setIsPwChecked] = useState(false);
+
+  useEffect(() => {
+    if (inputId && inputPw && inputCheckedPw) {
+      setIsEntered(true);
+    } else {
+      setIsEntered(false);
+    }
+  }, [inputId, inputPw, inputCheckedPw]);
+
+  useEffect(() => {
+    if (inputPw === inputCheckedPw) {
+      setIsPwChecked(true);
+    } else {
+      setIsPwChecked(false);
+    }
+  }, [inputCheckedPw]);
 
   function handleModal() {
     setRenderModal(false);
@@ -25,7 +43,6 @@ export default function SignUpModal({ setRenderModal }: SignUpModalProps) {
             label="아이디"
             value={inputId}
             setValue={setInputId}
-            inputStyle="border"
           />
           <Input
             type="password"
@@ -33,7 +50,6 @@ export default function SignUpModal({ setRenderModal }: SignUpModalProps) {
             label="비밀번호"
             value={inputPw}
             setValue={setInputPw}
-            inputStyle="border"
           />
           <Input
             type="password"
@@ -43,7 +59,10 @@ export default function SignUpModal({ setRenderModal }: SignUpModalProps) {
             setValue={setInputCheckedPw}
             inputStyle="border"
           />
-          <button className="mt-16 mb-2 rounded-lg bg-red-500 py-4 text-lg font-semibold text-white shadow hover:bg-opacity-70 sm:text-xl">
+          <button
+            className="mt-16 mb-2 rounded-lg bg-red-500 py-4 text-lg font-semibold text-white shadow hover:bg-opacity-70 sm:text-xl"
+            disabled={!(isEntered && isPwChecked)}
+          >
             회원가입
           </button>
         </form>
