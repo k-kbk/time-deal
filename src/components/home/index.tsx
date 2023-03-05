@@ -1,5 +1,5 @@
 import Banner from './Banner';
-import Container from './Container';
+import Container from '../common/Container';
 import Product from './Product';
 
 const dummy = [
@@ -55,7 +55,7 @@ const dummy = [
 
 export default function Index() {
   return (
-    <div className="mt-[4rem] bg-neutral-50">
+    <div className="mt-[4rem] h-full w-full bg-neutral-100">
       <Banner />
       <Container>
         {dummy.map((item) => (

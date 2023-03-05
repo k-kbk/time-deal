@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Input from './Input';
+import Input from '../common/Input';
 
 interface SignUpModalProps {
   setRenderModal: React.Dispatch<React.SetStateAction<boolean>>;

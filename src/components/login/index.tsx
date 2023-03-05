@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Input from './Input';
+import Input from '../common/Input';
 import ModalPortal from './ModalPortal';
 import SignUpModal from './SignUpModal';
 
